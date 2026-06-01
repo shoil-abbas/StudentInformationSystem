@@ -9,6 +9,7 @@ A simple console-based Java application for managing student records. This syste
 - **Search by ID**: Find a student by their unique student ID
 - **Search by Name**: Find a student by their name
 - **Delete Student**: Remove a student record by ID
+- **Update Student**: Update a student record by ID
 - **Input Validation**: Validates age (1-100), grade (1-100), and contact (10 digits)
 
 ## Requirements
@@ -28,7 +29,7 @@ Student Information System/
     ├── Student.java              # Student model class
     ├── StudentManager.java       # Manages student operations
     ├── ValidationUtils.java      # Input validation utilities
-    └── StudentInformationSystem.java  # Main application class
+    └── Main.java  # Main application class
 ```
 
 ## How to Run
@@ -53,7 +54,8 @@ Upon running the application, you'll see a menu with the following options:
 3. **Search Student by ID**: Enter student ID to find a specific student
 4. **Search Student by Name**: Enter student name to find a specific student
 5. **Delete Student**: Enter student ID to remove from the system
-6. **Exit**: Close the application
+6. **Update Student**: Enter student ID to update from the system
+7. **Exit**: Close the application
 
 ### Input Validation Rules
 
@@ -73,7 +75,7 @@ StudentID,Name,Age,Grade,Contact
 - **Student**: Represents a student with fields for ID, name, age, grade, and contact
 - **StudentManager**: Handles operations on the student collection (add, view, search, delete)
 - **ValidationUtils**: Contains static methods for validating user inputs
-- **StudentInformationSystem**: Main class with the console menu and user interaction
+- **Main**: Main class with the console menu and user interaction
 
 ## Contributing
 
