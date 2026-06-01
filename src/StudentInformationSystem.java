@@ -15,7 +15,8 @@ public class StudentInformationSystem {
             System.out.println("3. Search Student by ID");
             System.out.println("4. Search Student by Name");
             System.out.println("5. Delete Student");
-            System.out.println("6. Exit");
+            System.out.println("6. Update Student");
+            System.out.println("7. Exit");
             System.out.print("Enter choice: ");
 
             try {
@@ -83,6 +84,42 @@ public class StudentInformationSystem {
                         break;
 
                     case 6:
+                        System.out.print("Enter Student ID to update: ");
+                        String updateId = sc.nextLine();
+
+                        System.out.print("Enter New Name: ");
+                        String newName = sc.nextLine();
+
+                        System.out.print("Enter New Age: ");
+                        int newAge = sc.nextInt();
+
+                        if (!ValidationUtils.isValidAge(newAge)) {
+                            System.out.println("Invalid Age!");
+                            break;
+                        }
+
+                        System.out.print("Enter New Grade (1-100): ");
+                        double newGrade = sc.nextDouble();
+                        sc.nextLine();
+
+                        if (!ValidationUtils.isValidGrade(newGrade)) {
+                            System.out.println("Invalid Grade!");
+                            break;
+                        }
+
+                        System.out.print("Enter New Contact (10 digits): ");
+                        String newContact = sc.nextLine();
+
+                        if (!ValidationUtils.isValidContact(newContact)) {
+                            System.out.println("Invalid Contact!");
+                            break;
+                        }
+
+                        boolean updated = manager.updateStudent(updateId, newName, newAge, newGrade, newContact);
+                        System.out.println(updated ? "Updated successfully" : "Student not found");
+                        break;
+
+                    case 7:
                         System.out.println("Exiting...");
                         break;
 
